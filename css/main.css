@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#projectContainer{
+	scroll-snap-type: y proximity;
+	overflow-y: scroll;
+	overflow-x: none;
+	width: 100vw;
+	max-height: 100vh;
+}
+
+#projectContainer article{
+	height: 80vh;
+	scroll-snap-align: start;
+	padding: 10vh 10vw;
+	scroll-padding-top:10vw;
+	pointer-events: none;
+	transition-duration: 200ms;
+}
+
+#projectContainer article:hover{
+	background-color: red;
+	padding: 8vh 8vw;
+	height: 82vh;
+}
+
+#projectContainer article .image{
+	height: 100%;
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+.image .image-cover{
+	position: absolute;
+	width: 100%;
+	height: 150%;
+	left: 0px;
+	background-color: black;
+	transform: translate(-130%, -25%) rotate(0.05turn);
+	transition-duration: 800ms;
+	transition-property: transform opacity;
+	opacity: 0;
+}
+
+.section-desc{
+	position: absolute;
+	left: 0;
+	width: 40%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	color: white;
+	transition-duration: 600ms;
+	transform: translate(-100%, 0%);
+	margin-left: 10%;
+	opacity: 0;
+}
+
+.section-desc h1{
+	font-size: 2rem;
+	letter-spacing: 1px;
+}
+
+.section-desc p{
+	margin-left: 1px;
+}
+
+.image:hover>.image-cover{
+	transform: translate(-40%, -25%) rotate(0.05turn);
+	opacity: 0.6;
+}
+
+.image:hover>.section-desc{
+	transform: translate(0%, 0%);
+	opacity: 1;
+}
+
+.minecraft-section>.image{
+	background-image: url("../img/minecraft.png");
+}
+
+.stack-section>.image{
+	background-image: url("../img/stack.png");
+}
+
+.dtb-section>.image{
+	background-image: url("../img/dtb.png");
+}
+
+
+.fade {
+  margin: 50px;
+  padding: 50px;
+  background-color: lightgreen;
+  transition: opacity 0.7s ease-in;
+}
+
+.fadeOut { opacity: 0; }
+.fadeIn { opacity: 1; }
